@@ -1,0 +1,21 @@
+{
+  "name": "Crystal Qualet Co., Ltd.",
+  "short_name": "Crystal Qualet",
+  "description": "ผลิตภัณฑ์ดูแลผิวพรีเมียม พัฒนาและจัดจำหน่ายผ่านแพลตฟอร์มออนไลน์ชั้นนำ",
+  "lang": "th",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fbfaf6",
+  "theme_color": "#0d7d70",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

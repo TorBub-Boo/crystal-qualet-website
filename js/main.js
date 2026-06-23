@@ -150,7 +150,10 @@
   const form = doc.querySelector("#contact-form");
   if (form) {
     const success = form.querySelector(".form-success");
-    const setError = (field, on) => field.classList.toggle("invalid", on);
+    const setError = (input, on) => {
+      input.closest(".field").classList.toggle("invalid", on);
+      input.setAttribute("aria-invalid", String(on));
+    };
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -164,26 +167,35 @@
 
       [name, message].forEach((f) => {
         const bad = !f.value.trim();
-        setError(f.closest(".field"), bad);
+        setError(f, bad);
         if (bad) ok = false;
       });
       const emailBad = !email.value.trim() || !emailOk;
-      setError(email.closest(".field"), emailBad);
+      setError(email, emailBad);
       if (emailBad) ok = false;
 
       if (!ok) {
-        const firstBad = form.querySelector(".field.invalid input, .field.invalid textarea");
+        const firstBad = form.querySelector('[aria-invalid="true"]');
         if (firstBad) firstBad.focus();
         return;
       }
 
-      if (success) success.classList.add("show");
+      if (success) {
+        success.classList.add("show");
+        success.setAttribute("tabindex", "-1");
+        success.focus();
+      }
       form.reset();
-      setTimeout(() => success && success.classList.remove("show"), 6000);
+      setTimeout(() => {
+        if (success) success.classList.remove("show");
+      }, 6000);
     });
 
     form.querySelectorAll("input, textarea").forEach((f) => {
-      f.addEventListener("input", () => f.closest(".field").classList.remove("invalid"));
+      f.addEventListener("input", () => {
+        f.closest(".field").classList.remove("invalid");
+        f.removeAttribute("aria-invalid");
+      });
     });
   }
 
