@@ -1,0 +1,4 @@
+# Cloudflare Pages — path redirects
+# (redirect apex → www ตั้งใน Cloudflare Dashboard แทน — ดู README)
+
+/404  /404.html  404

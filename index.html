@@ -9,10 +9,11 @@
   <meta name="keywords" content="คริสตัล ควาเลท, Crystal Qualet, เซรั่ม, สกินแคร์, เครื่องสำอาง, ขายออนไลน์, Shopee, Lazada, TikTok Shop, สมุทรปราการ" />
   <meta name="robots" content="index, follow" />
   <meta name="color-scheme" content="light" />
-  <meta name="theme-color" content="#0d7d70" />
+  <meta name="theme-color" content="#111827" />
   <meta name="format-detection" content="telephone=no" />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
   <link rel="manifest" href="site.webmanifest" />
   <link rel="canonical" href="https://www.crystalqualet.co.th/" />
 
@@ -36,8 +37,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Sora:wght@400;500;600;700&amp;family=Noto+Sans+Thai:wght@400;500;600;700&amp;family=Noto+Serif+Thai:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Noto+Sans+Thai:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
 
+  <link rel="preload" as="image" href="assets/img/product-vitc.jpg" fetchpriority="high" />
   <link rel="stylesheet" href="css/styles.css" />
 
   <!-- Structured data -->
@@ -48,7 +50,7 @@
     "name": "บริษัท คริสตัล ควาเลท จำกัด",
     "alternateName": "Crystal Qualet Co., Ltd.",
     "url": "https://www.crystalqualet.co.th/",
-    "logo": "https://www.crystalqualet.co.th/assets/logo.svg",
+    "logo": "https://www.crystalqualet.co.th/assets/logo.png",
     "image": "https://www.crystalqualet.co.th/assets/og-image.svg",
     "foundingDate": "2024-03-25",
     "description": "ผู้พัฒนาและจัดจำหน่ายผลิตภัณฑ์ดูแลผิวและเครื่องสำอางคุณภาพ ผ่านแพลตฟอร์มอีคอมเมิร์ซชั้นนำ",
@@ -57,7 +59,7 @@
     "knowsLanguage": ["th", "en"],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "56/2 หมู่ที่ 5 สำโรงเหนือ",
+      "streetAddress": "456/2 หมู่ที่ 5 สำโรงเหนือ",
       "addressLocality": "เมืองสมุทรปราการ",
       "addressRegion": "สมุทรปราการ",
       "postalCode": "10270",
@@ -80,21 +82,17 @@
   <!-- ===================== HEADER ===================== -->
   <header class="site-header">
     <div class="container nav">
-      <a href="#home" class="brand" aria-label="คริสตัล ควาเลท หน้าแรก">
-        <img class="mark" src="assets/logo.svg" alt="" width="38" height="38" />
-        <span class="brand-text">
-          <span class="brand-name">Crystal Qualet</span>
-          <span class="brand-sub">Skincare &amp; Distribution</span>
-        </span>
+      <a href="#home" class="brand" aria-label="Crystal Qualet หน้าแรก">
+        <img class="mark mark--full" src="assets/logo.png?v=2" alt="Crystal Qualet" width="48" height="48" />
       </a>
 
       <nav class="nav-links" aria-label="เมนูหลัก">
-        <a href="#about"><span data-lang-th>เกี่ยวกับเรา</span><span data-lang-en>About</span></a>
-        <a href="#services"><span data-lang-th>บริการ</span><span data-lang-en>Services</span></a>
-        <a href="#products"><span data-lang-th>ผลิตภัณฑ์</span><span data-lang-en>Products</span></a>
-        <a href="#channels"><span data-lang-th>ช่องทางขาย</span><span data-lang-en>Channels</span></a>
-        <a href="#process"><span data-lang-th>ขั้นตอน</span><span data-lang-en>Process</span></a>
-        <a href="#contact"><span data-lang-th>ติดต่อ</span><span data-lang-en>Contact</span></a>
+        <a href="#about" data-nav="about"><span data-lang-th>เกี่ยวกับเรา</span><span data-lang-en>About</span></a>
+        <a href="#services" data-nav="services"><span data-lang-th>บริการ</span><span data-lang-en>Services</span></a>
+        <a href="#products" data-nav="products"><span data-lang-th>ผลิตภัณฑ์</span><span data-lang-en>Products</span></a>
+        <a href="#channels" data-nav="channels"><span data-lang-th>ช่องทางขาย</span><span data-lang-en>Channels</span></a>
+        <a href="#process" data-nav="process"><span data-lang-th>ขั้นตอน</span><span data-lang-en>Process</span></a>
+        <a href="#contact" data-nav="contact"><span data-lang-th>ติดต่อ</span><span data-lang-en>Contact</span></a>
       </nav>
 
       <div class="nav-actions">
@@ -114,12 +112,12 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#about"><span data-lang-th>เกี่ยวกับเรา</span><span data-lang-en>About</span></a>
-    <a href="#services"><span data-lang-th>บริการ</span><span data-lang-en>Services</span></a>
-    <a href="#products"><span data-lang-th>ผลิตภัณฑ์</span><span data-lang-en>Products</span></a>
-    <a href="#channels"><span data-lang-th>ช่องทางขาย</span><span data-lang-en>Channels</span></a>
-    <a href="#process"><span data-lang-th>ขั้นตอน</span><span data-lang-en>Process</span></a>
-    <a href="#contact"><span data-lang-th>ติดต่อ</span><span data-lang-en>Contact</span></a>
+    <a href="#about" data-nav="about"><span data-lang-th>เกี่ยวกับเรา</span><span data-lang-en>About</span></a>
+    <a href="#services" data-nav="services"><span data-lang-th>บริการ</span><span data-lang-en>Services</span></a>
+    <a href="#products" data-nav="products"><span data-lang-th>ผลิตภัณฑ์</span><span data-lang-en>Products</span></a>
+    <a href="#channels" data-nav="channels"><span data-lang-th>ช่องทางขาย</span><span data-lang-en>Channels</span></a>
+    <a href="#process" data-nav="process"><span data-lang-th>ขั้นตอน</span><span data-lang-en>Process</span></a>
+    <a href="#contact" data-nav="contact"><span data-lang-th>ติดต่อ</span><span data-lang-en>Contact</span></a>
     <a href="#contact" class="btn"><span data-lang-th>ร่วมงานกับเรา</span><span data-lang-en>Partner with us</span></a>
   </div>
 
@@ -129,23 +127,23 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="hero-badge reveal">
+          <span class="hero-badge">
             <span class="dot"></span>
             <span data-lang-th>ผู้เชี่ยวชาญด้านความงามยุคดิจิทัล</span>
             <span data-lang-en>Beauty experts for the digital era</span>
           </span>
 
-          <h1 id="hero-title" class="reveal" data-d="1">
+          <h1 id="hero-title">
             <span data-lang-th>ความงามที่ <span class="accent">ใสกระจ่าง</span> ในทุกสัมผัสของผิวคุณ</span>
             <span data-lang-en>Radiant beauty, <span class="accent">crystal-clear</span> in every detail</span>
           </h1>
 
-          <p class="lead reveal" data-d="2">
+          <p class="lead">
             <span data-lang-th>บริษัท คริสตัล ควาเลท จำกัด พัฒนาและจัดจำหน่ายผลิตภัณฑ์ดูแลผิวคุณภาพสูง พร้อมความเชี่ยวชาญในการสร้างแบรนด์และบริหารร้านค้าออนไลน์ให้เติบโตอย่างยั่งยืนบนแพลตฟอร์มชั้นนำ</span>
             <span data-lang-en>Crystal Qualet Co., Ltd. develops and distributes high-quality skincare products, with deep expertise in brand building and growing online stores sustainably across leading marketplaces.</span>
           </p>
 
-          <div class="hero-cta reveal" data-d="3">
+          <div class="hero-cta">
             <a href="#products" class="btn btn--lg">
               <span data-lang-th>ดูผลิตภัณฑ์ของเรา</span><span data-lang-en>Explore products</span>
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -155,41 +153,34 @@
             </a>
           </div>
 
-          <div class="hero-meta reveal" data-d="4">
-            <div class="item">
-              <div class="k"><span data-count="3">0</span>+</div>
+          <div class="hero-meta">
+            <div class="hero-stat">
+              <div class="k"><span data-count="3" data-count-hero>0</span>+</div>
               <div class="v"><span data-lang-th>แพลตฟอร์มหลัก</span><span data-lang-en>Core platforms</span></div>
             </div>
-            <div class="item">
-              <div class="k"><span data-count="100">0</span>%</div>
+            <div class="hero-stat">
+              <div class="k"><span data-count="100" data-count-hero>0</span>%</div>
               <div class="v"><span data-lang-th>ผ่านมาตรฐาน อย.</span><span data-lang-en>FDA-notified</span></div>
             </div>
-            <div class="item">
-              <div class="k"><span data-count="24">0</span>/7</div>
+            <div class="hero-stat">
+              <div class="k"><span data-count="24" data-count-hero>0</span>/7</div>
               <div class="v"><span data-lang-th>ดูแลลูกค้าออนไลน์</span><span data-lang-en>Customer care</span></div>
             </div>
           </div>
         </div>
 
-        <div class="hero-visual reveal" data-d="2">
+        <div class="hero-visual">
           <div class="hero-photo">
-            <img src="assets/img/hero.jpg" width="900" height="1350"
-                 alt="ขวดเซรั่มบำรุงผิวพรีเมียมของคริสตัล ควาเลท" loading="eager" decoding="async" />
-            <div class="hero-photo__badge">
-              <span class="pm-top-row">Crystal Qualet · EST. 2024</span>
-              <span class="t">Brightening Serum</span>
-              <span class="s" data-lang-th>คอลเลกชันสกินแคร์พรีเมียม</span>
-              <span class="s" data-lang-en>Premium skincare collection</span>
-            </div>
+            <img src="assets/img/product-vitc.jpg" width="700" height="467"
+                 alt="วิตามินซี เซรั่ม คริสตัล ควาเลท — ผลิตภัณฑ์ดูแลผิวพรีเมียม" loading="eager" fetchpriority="high" decoding="async" />
           </div>
-          <div class="chip chip-1" aria-hidden="true">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></span>
-            <span data-lang-th>สูตรเข้มข้น</span><span data-lang-en>Active formula</span>
-          </div>
-          <div class="chip chip-2">
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
-            <span data-lang-th>ปลอดภัย มีมาตรฐาน</span><span data-lang-en>Safe &amp; certified</span>
-          </div>
+          <figcaption class="hero-caption">
+            <span class="hero-caption__meta">Crystal Qualet · EST. 2024</span>
+            <span class="hero-caption__title" data-lang-th>วิตามินซี เซรั่ม</span>
+            <span class="hero-caption__title" data-lang-en>Vitamin C Serum</span>
+            <span class="hero-caption__sub" data-lang-th>สูตรกระจ่างใส · แจ้งจด อย.</span>
+            <span class="hero-caption__sub" data-lang-en>Brightening formula · FDA notified</span>
+          </figcaption>
         </div>
       </div>
     </section>
@@ -333,7 +324,7 @@
         <div class="section-head center reveal">
           <span class="eyebrow"><span data-lang-th>ผลิตภัณฑ์</span><span data-lang-en>Our products</span></span>
           <h2 id="products-title"><span data-lang-th>สกินแคร์ที่ออกแบบมาเพื่อผิวสุขภาพดี</span><span data-lang-en>Skincare designed for healthy skin</span></h2>
-          <p class="lead"><span data-lang-th>กลุ่มผลิตภัณฑ์ตัวอย่างของแบรนด์ในเครือ คริสตัล ควาเลท</span><span data-lang-en>A sample of the product lines under the Crystal Qualet portfolio.</span></p>
+          <p class="lead"><span data-lang-th>คอลเลกชันเซรั่มเข้มข้น ออกแบบเพื่อผิวกระจ่างใส ชุ่มชื้น และสุขภาพดี</span><span data-lang-en>Concentrated serums designed for bright, hydrated, healthy-looking skin.</span></p>
         </div>
 
         <div class="product-grid">
@@ -346,6 +337,7 @@
               <h3><span data-lang-th>วิตามินซี เซรั่ม</span><span data-lang-en>Vitamin C Serum</span></h3>
               <p><span data-lang-th>ช่วยให้ผิวกระจ่างใส ลดเลือนจุดด่างดำ ด้วยวิตามินซีเข้มข้น</span><span data-lang-en>Brightens skin and fades dark spots with concentrated vitamin C.</span></p>
               <div class="feat"><span>Brightening</span><span>Antioxidant</span><span>Vegan</span></div>
+              <a href="#channels" class="product-link"><span data-lang-th>ช่องทางสั่งซื้อ</span><span data-lang-en>Where to buy</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
           </article>
           <article class="product-card reveal" data-d="1">
@@ -357,6 +349,7 @@
               <h3><span data-lang-th>ไฮยา บูสเตอร์ เซรั่ม</span><span data-lang-en>Hya Booster Serum</span></h3>
               <p><span data-lang-th>เติมความชุ่มชื้นล้ำลึก ผิวอิ่มน้ำ ดูสุขภาพดีตลอดวัน</span><span data-lang-en>Deep hydration for plump, healthy-looking skin all day.</span></p>
               <div class="feat"><span>Hydrating</span><span>Hyaluronic</span><span>Lightweight</span></div>
+              <a href="#channels" class="product-link"><span data-lang-th>ช่องทางสั่งซื้อ</span><span data-lang-en>Where to buy</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
           </article>
           <article class="product-card reveal" data-d="2">
@@ -368,13 +361,10 @@
               <h3><span data-lang-th>ไนอาซินาไมด์ เซรั่ม</span><span data-lang-en>Niacinamide Serum</span></h3>
               <p><span data-lang-th>ปรับสีผิวให้สม่ำเสมอ กระชับรูขุมขน เพื่อผิวเนียนเรียบ</span><span data-lang-en>Evens skin tone and refines pores for a smooth finish.</span></p>
               <div class="feat"><span>Pore care</span><span>Even tone</span><span>Soothing</span></div>
+              <a href="#channels" class="product-link"><span data-lang-th>ช่องทางสั่งซื้อ</span><span data-lang-en>Where to buy</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             </div>
           </article>
         </div>
-        <p class="form-note product-note reveal">
-          <span data-lang-th>* ภาพและรายการผลิตภัณฑ์เป็นตัวอย่างเพื่อการนำเสนอ สามารถปรับให้ตรงกับสินค้าจริงของบริษัทได้</span>
-          <span data-lang-en>* Product visuals and items shown are illustrative and can be tailored to the company's actual catalogue.</span>
-        </p>
       </div>
     </section>
 
@@ -384,19 +374,23 @@
         <div class="section-head center reveal">
           <span class="eyebrow"><span data-lang-th>ช่องทางจัดจำหน่าย</span><span data-lang-en>Where to buy</span></span>
           <h2 id="channels-title"><span data-lang-th>ช้อปสินค้าของเราได้ทุกแพลตฟอร์มชั้นนำ</span><span data-lang-en>Shop us on every leading platform</span></h2>
+          <p class="lead"><span data-lang-th>เลือกช่องทางที่สะดวก หรือติดต่อทีมงานเพื่อรับลิงก์ร้านค้าอย่างเป็นทางการ</span><span data-lang-en>Choose your preferred channel, or contact us for official store links.</span></p>
         </div>
         <div class="channels">
-          <a class="channel ch-shopee reveal" href="#contact" aria-label="Shopee">
+          <a class="channel ch-shopee reveal" href="#contact" data-shop="shopee" aria-label="Shopee">
             <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1L5 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/><path d="M10 12c0 1.5 4 1.5 4 3.5S10 17 10 17"/></svg></span>
             <span class="meta"><span class="n">Shopee</span><span class="d" data-lang-th>ร้านค้าอย่างเป็นทางการ</span><span class="d" data-lang-en>Official store</span></span>
+            <span class="channel-action" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
-          <a class="channel ch-lazada reveal" data-d="1" href="#contact" aria-label="Lazada">
+          <a class="channel ch-lazada reveal" data-d="1" href="#contact" data-shop="lazada" aria-label="Lazada">
             <span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 7 4v10l-7 4-7-4V7l7-4Z"/><path d="m12 8 3.5 2v4L12 16l-3.5-2v-4L12 8Z"/></svg></span>
             <span class="meta"><span class="n">Lazada</span><span class="d" data-lang-th>ร้านค้าอย่างเป็นทางการ</span><span class="d" data-lang-en>Official store</span></span>
+            <span class="channel-action" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
-          <a class="channel ch-tiktok reveal" data-d="2" href="#contact" aria-label="TikTok Shop">
+          <a class="channel ch-tiktok reveal" data-d="2" href="#contact" data-shop="tiktok" aria-label="TikTok Shop">
             <span class="logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.3 1.7 4 4 4.3v3c-1.5 0-2.9-.4-4-1.2v6.4A6.5 6.5 0 1 1 9.5 9v3.1A3.4 3.4 0 1 0 13 15.5V3h3Z"/></svg></span>
             <span class="meta"><span class="n">TikTok Shop</span><span class="d" data-lang-th>ไลฟ์ &amp; วิดีโอช้อป</span><span class="d" data-lang-en>Live &amp; video shopping</span></span>
+            <span class="channel-action" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
         </div>
       </div>
@@ -448,7 +442,7 @@
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <div>
               <div class="k"><span data-lang-th>ที่อยู่</span><span data-lang-en>Address</span></div>
-              <div class="v"><span data-lang-th>56/2 หมู่ที่ 5 ต.สำโรงเหนือ อ.เมืองสมุทรปราการ จ.สมุทรปราการ 10270</span><span data-lang-en>56/2 Moo 5, Samrong Nuea, Mueang Samut Prakan, Samut Prakan 10270, Thailand</span></div>
+              <div class="v"><span data-lang-th>456/2 หมู่ที่ 5 ต.สำโรงเหนือ อ.เมืองสมุทรปราการ จ.สมุทรปราการ 10270</span><span data-lang-en>456/2 Moo 5, Samrong Nuea, Mueang Samut Prakan, Samut Prakan 10270, Thailand</span></div>
             </div>
           </div>
 
@@ -461,6 +455,14 @@
           </div>
 
           <div class="info-card reveal" data-d="2">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div>
+              <div class="k"><span data-lang-th>เวลาตอบกลับ</span><span data-lang-en>Response time</span></div>
+              <div class="v"><span data-lang-th>จันทร์–ศุกร์ 09:00–18:00 น. (ตอบภายใน 1 วันทำการ)</span><span data-lang-en>Mon–Fri, 9:00–18:00 (within 1 business day)</span></div>
+            </div>
+          </div>
+
+          <div class="info-card reveal" data-d="3">
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></span>
             <div>
               <div class="k"><span data-lang-th>เลขทะเบียนนิติบุคคล</span><span data-lang-en>Company registration</span></div>
@@ -470,17 +472,21 @@
         </div>
 
         <form class="form-card reveal" data-d="1" id="contact-form" novalidate aria-labelledby="contact-form-title">
-          <h3 id="contact-form-title" class="sr-only" data-lang-th>แบบฟอร์มติดต่อ</h3>
-          <h3 id="contact-form-title-en" class="sr-only" data-lang-en>Contact form</h3>
+          <div class="form-card__head">
+            <h3 id="contact-form-title"><span data-lang-th>ส่งข้อความถึงเรา</span><span data-lang-en>Send us a message</span></h3>
+            <p><span data-lang-th>กรอกข้อมูลด้านล่าง ทีมงานจะติดต่อกลับโดยเร็วที่สุด</span><span data-lang-en>Fill in the form below and our team will respond promptly.</span></p>
+          </div>
           <div class="form-row">
             <div class="field">
               <label for="cf-name"><span data-lang-th>ชื่อ-นามสกุล</span><span data-lang-en>Full name</span> <span class="req" aria-hidden="true">*</span></label>
-              <input type="text" id="cf-name" name="name" autocomplete="name" required aria-required="true" aria-describedby="cf-name-err" />
+              <input type="text" id="cf-name" name="name" autocomplete="name" required aria-required="true" aria-describedby="cf-name-err"
+                     placeholder="สมชาย ใจดี" data-placeholder-th="สมชาย ใจดี" data-placeholder-en="John Smith" />
               <span class="err" id="cf-name-err"><span data-lang-th>กรุณากรอกชื่อของคุณ</span><span data-lang-en>Please enter your name</span></span>
             </div>
             <div class="field">
               <label for="cf-email"><span data-lang-th>อีเมล</span><span data-lang-en>Email</span> <span class="req" aria-hidden="true">*</span></label>
-              <input type="email" id="cf-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="cf-email-err" />
+              <input type="email" id="cf-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="cf-email-err"
+                     placeholder="you@email.com" data-placeholder-th="you@email.com" data-placeholder-en="you@email.com" />
               <span class="err" id="cf-email-err"><span data-lang-th>กรุณากรอกอีเมลให้ถูกต้อง</span><span data-lang-en>Please enter a valid email</span></span>
             </div>
           </div>
@@ -488,7 +494,8 @@
           <div class="form-row">
             <div class="field">
               <label for="cf-phone"><span data-lang-th>เบอร์โทร</span><span data-lang-en>Phone</span></label>
-              <input type="tel" id="cf-phone" name="phone" autocomplete="tel" inputmode="tel" />
+              <input type="tel" id="cf-phone" name="phone" autocomplete="tel" inputmode="tel"
+                     placeholder="08x-xxx-xxxx" data-placeholder-th="08x-xxx-xxxx" data-placeholder-en="+66 xx xxx xxxx" />
             </div>
             <div class="field">
               <label for="cf-topic"><span data-lang-th>เรื่องที่ติดต่อ</span><span data-lang-en>Topic</span></label>
@@ -503,24 +510,26 @@
 
           <div class="field">
             <label for="cf-message"><span data-lang-th>ข้อความ</span><span data-lang-en>Message</span> <span class="req" aria-hidden="true">*</span></label>
-            <textarea id="cf-message" name="message" rows="5" required aria-required="true" aria-describedby="cf-message-err"></textarea>
+            <textarea id="cf-message" name="message" rows="5" required aria-required="true" aria-describedby="cf-message-err"
+                      placeholder="บอกเราเกี่ยวกับความต้องการของคุณ..." data-placeholder-th="บอกเราเกี่ยวกับความต้องการของคุณ..."
+                      data-placeholder-en="Tell us about your needs..."></textarea>
             <span class="err" id="cf-message-err"><span data-lang-th>กรุณากรอกข้อความ</span><span data-lang-en>Please enter a message</span></span>
           </div>
 
-          <button type="submit" class="btn btn--lg btn--block">
-            <span data-lang-th>ส่งข้อความ</span><span data-lang-en>Send message</span>
+          <button type="submit" class="btn btn--lg btn--block" id="cf-submit">
+            <span class="btn-label" data-lang-th>ส่งข้อความ</span><span class="btn-label" data-lang-en>Send message</span>
             <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
           </button>
 
           <p class="form-note">
-            <span data-lang-th>เราจะเก็บข้อมูลของคุณเป็นความลับ และใช้เพื่อการติดต่อกลับเท่านั้น</span>
-            <span data-lang-en>Your information is kept confidential and used only to contact you back.</span>
+            <span data-lang-th>ข้อมูลของคุณเป็นความลับ ระบบจะเปิดโปรแกรมอีเมลเพื่อส่งข้อความถึงทีมงานโดยตรง</span>
+            <span data-lang-en>Your details stay private. Submitting opens your email app to send the message directly.</span>
           </p>
 
           <div class="form-success" role="status" aria-live="polite">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-            <span data-lang-th>ส่งข้อความเรียบร้อยแล้ว ขอบคุณที่ติดต่อเรา ทีมงานจะติดต่อกลับโดยเร็วที่สุด</span>
-            <span data-lang-en>Your message has been sent. Thank you — our team will get back to you shortly.</span>
+            <span data-lang-th>เปิดโปรแกรมอีเมลแล้ว หากไม่ปรากฏ กรุณาส่งถึง info@crystalqualet.co.th โดยตรง</span>
+            <span data-lang-en>Your email app should open. If it doesn't, please email info@crystalqualet.co.th directly.</span>
           </div>
         </form>
       </div>
@@ -548,12 +557,8 @@
       <h2 class="sr-only" data-lang-en>Additional information and links</h2>
       <div class="footer-grid">
         <div>
-          <a href="#home" class="brand">
-            <img class="mark" src="assets/logo.svg" alt="" width="38" height="38" />
-            <span class="brand-text">
-              <span class="brand-name">Crystal Qualet</span>
-              <span class="brand-sub">Skincare &amp; Distribution</span>
-            </span>
+          <a href="#home" class="brand" aria-label="Crystal Qualet">
+            <img class="mark mark--full" src="assets/logo.png?v=2" alt="Crystal Qualet" width="48" height="48" />
           </a>
           <p class="footer-about">
             <span data-lang-th>บริษัท คริสตัล ควาเลท จำกัด — พัฒนาและจัดจำหน่ายผลิตภัณฑ์ดูแลผิวคุณภาพ ผ่านแพลตฟอร์มอีคอมเมิร์ซชั้นนำของไทย</span>

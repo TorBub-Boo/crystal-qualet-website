@@ -34,6 +34,85 @@ crystal-qualet-website/
 └── .gitignore
 ```
 
+## Deploy — Cloudflare Pages + crystalqualet.co.th
+
+เว็บนี้เป็น static site ไม่ต้อง build เหมาะกับ **Cloudflare Pages** โดเมน `crystalqualet.co.th` อยู่ใน Cloudflare แล้ว ทำตามนี้ได้เลย
+
+### วิธี A — เชื่อม GitHub (แนะนำ, อัปเดตอัตโนมัติ)
+
+**1. Push โค้ดขึ้น GitHub**
+
+```bash
+cd crystal-qualet-website
+git add .
+git commit -m "Prepare Cloudflare Pages deploy"
+gh repo create crystal-qualet-website --public --source=. --push
+# หรือสร้าง repo เองแล้ว: git remote add origin ... && git push -u origin master
+```
+
+**2. สร้าง Pages project**
+
+1. เปิด [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
+2. เลือก repo `crystal-qualet-website`
+3. ตั้งค่า build:
+
+| ช่อง | ค่า |
+|------|-----|
+| Production branch | `master` (หรือ `main`) |
+| Build command | *(ว่าง)* |
+| Build output directory | `/` |
+
+4. กด **Save and Deploy** — จะได้ URL แบบ `https://crystal-qualet-website.pages.dev`
+
+**3. ผูกโดเมน**
+
+1. Pages project → **Custom domains** → **Set up a custom domain**
+2. เพิ่ม `www.crystalqualet.co.th` ก่อน (canonical ในเว็บใช้ www)
+3. เพิ่ม `crystalqualet.co.th` (apex) ด้วย
+
+Cloudflare จะสร้าง/อัปเดต DNS record ให้อัตโนมัติ (CNAME ไป Pages)
+
+**4. Redirect apex → www (แนะนำ)**
+
+Dashboard → **Rules** → **Redirect Rules** → Create rule:
+
+- **If:** Hostname equals `crystalqualet.co.th`
+- **Then:** Dynamic redirect → `https://www.crystalqualet.co.th${uri.path}`
+- Status: **301**
+
+**5. SSL**
+
+Cloudflare จัดการ SSL ให้อัตโนมัติ — ตรวจว่า **SSL/TLS** → **Full (strict)**
+
+---
+
+### วิธี B — อัปโหลดตรงด้วย Wrangler (ไม่ใช้ GitHub)
+
+```bash
+cd crystal-qualet-website
+npx wrangler login
+npx wrangler pages deploy . --project-name=crystal-qualet
+```
+
+จากนั้นผูกโดเมนใน Dashboard เหมือนขั้นตอนที่ 3–5 ด้านบน
+
+---
+
+### หลัง deploy ควรเช็ก
+
+- [ ] `https://www.crystalqualet.co.th` เปิดได้
+- [ ] `https://crystalqualet.co.th` redirect ไป www
+- [ ] โลโก้/รูปใน `/assets/` โหลดครบ
+- [ ] สลับ TH/EN ทำงาน
+- [ ] `/robots.txt` และ `/sitemap.xml` เปิดได้
+
+### อัปเดตเว็บครั้งถัดไป
+
+- **GitHub:** push ขึ้น repo → Pages deploy ใหม่เอง
+- **Wrangler:** รันคำสั่ง `npx wrangler pages deploy .` อีกครั้ง
+
+---
+
 ## วิธีเปิดดู (Run locally)
 
 เปิดไฟล์ `index.html` ในเบราว์เซอร์ได้โดยตรง หรือรันเซิร์ฟเวอร์เล็ก ๆ:
@@ -61,7 +140,7 @@ python3 -m http.server 5173
 ข้อมูลต่อไปนี้เป็นค่าตัวอย่าง/สมมุติ ควรแทนที่ด้วยข้อมูลจริงของบริษัท:
 
 - **อีเมล** `info@crystalqualet.co.th` และโดเมน `crystalqualet.co.th` (สมมุติ)
-- **เลขที่อยู่** บ้านเลขที่ "56/2" — แหล่งข้อมูลสาธารณะมีทั้ง 56/2 และ 456/2 โปรดยืนยันเลขที่ถูกต้อง
+- **เลขที่อยู่** บ้านเลขที่ "456/2" (ยืนยันแล้ว)
 - **รายการผลิตภัณฑ์และรูปภาพ** เป็นตัวอย่างเพื่อการนำเสนอ ควรแทนด้วยสินค้าจริง + ภาพถ่ายจริง
 - **ลิงก์ร้านค้า** Shopee / Lazada / TikTok Shop ปัจจุบันชี้ไปที่ส่วนติดต่อ ควรใส่ URL ร้านจริง
 - **เบอร์โทรศัพท์** ยังไม่ได้ระบุ

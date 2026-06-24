@@ -1,0 +1,5 @@
+# Cloudflare Pages — deploy ด้วย Wrangler CLI (ทางเลือก)
+# npx wrangler pages deploy . --project-name=crystal-qualet
+name = "crystal-qualet"
+compatibility_date = "2024-06-01"
+pages_build_output_dir = "."

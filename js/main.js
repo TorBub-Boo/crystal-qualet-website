@@ -7,6 +7,14 @@
   const doc = document;
   const root = doc.documentElement;
 
+  /* ---------- Site config (update before launch) ---------- */
+  const CONTACT_EMAIL = "info@crystalqualet.co.th";
+  const SHOP_LINKS = {
+    shopee: "",
+    lazada: "",
+    tiktok: "",
+  };
+
   /* ---------- Mark decorative SVGs as hidden from assistive tech ---------- */
   doc.querySelectorAll("svg:not([role])").forEach((svg) => {
     svg.setAttribute("aria-hidden", "true");
@@ -50,13 +58,14 @@
     );
   }
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 860) setMenu(false);
+    if (window.innerWidth > 940) setMenu(false);
   });
 
   /* ---------- Language toggle (TH / EN) ---------- */
   const langButtons = doc.querySelectorAll("[data-set-lang]");
   // <option> can't use show/hide spans, so swap their text via data-th / data-en.
   const localizedOptions = doc.querySelectorAll("option[data-th][data-en]");
+  const localizedPlaceholders = doc.querySelectorAll("[data-placeholder-th][data-placeholder-en]");
   const applyLang = (lang) => {
     root.setAttribute("lang", lang);
     try { localStorage.setItem("cq-lang", lang); } catch (e) {}
@@ -67,6 +76,9 @@
     });
     localizedOptions.forEach((o) => {
       o.textContent = o.getAttribute(lang === "en" ? "data-en" : "data-th");
+    });
+    localizedPlaceholders.forEach((el) => {
+      el.placeholder = el.getAttribute(lang === "en" ? "data-placeholder-en" : "data-placeholder-th") || "";
     });
     doc.title = lang === "en"
       ? "Crystal Qualet Co., Ltd. — Premium Skincare & E-commerce Distribution"
@@ -92,8 +104,72 @@
     });
   });
 
+  /* ---------- Marketplace links ---------- */
+  const shopLabels = {
+    shopee: { th: "Shopee", en: "Shopee" },
+    lazada: { th: "Lazada", en: "Lazada" },
+    tiktok: { th: "TikTok Shop", en: "TikTok Shop" },
+  };
+  const topicSelect = doc.querySelector("#cf-topic");
+  const messageField = doc.querySelector("#cf-message");
+
+  doc.querySelectorAll("[data-shop]").forEach((link) => {
+    const key = link.getAttribute("data-shop");
+    const url = SHOP_LINKS[key];
+    if (url) {
+      link.href = url;
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+      return;
+    }
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (topicSelect) topicSelect.value = "product";
+      const lang = root.getAttribute("lang") === "en" ? "en" : "th";
+      const label = shopLabels[key] ? shopLabels[key][lang] : key;
+      if (messageField) {
+        messageField.value =
+          lang === "en"
+            ? `Hello, I would like the official ${label} store link.`
+            : `สวัสดีครับ/ค่ะ ขอลิงก์ร้าน ${label} อย่างเป็นทางการครับ/ค่ะ`;
+      }
+      const contact = doc.querySelector("#contact");
+      if (contact) {
+        const top = contact.getBoundingClientRect().top + window.scrollY - 68;
+        window.scrollTo({ top, behavior: "smooth" });
+        setTimeout(() => messageField && messageField.focus(), 450);
+      }
+    });
+  });
+
+  /* ---------- Active nav (scroll spy) ---------- */
+  const navAnchors = doc.querySelectorAll(".nav-links a[data-nav], .mobile-menu a[data-nav]");
+  const sections = ["about", "services", "products", "channels", "process", "contact"]
+    .map((id) => doc.getElementById(id))
+    .filter(Boolean);
+  const setActiveNav = (id) => {
+    navAnchors.forEach((a) => {
+      a.classList.toggle("active", a.getAttribute("data-nav") === id);
+    });
+  };
+  if ("IntersectionObserver" in window && sections.length) {
+    const navIo = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveNav(visible.target.id);
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: [0.12, 0.35, 0.6] }
+    );
+    sections.forEach((s) => navIo.observe(s));
+  }
+
   /* ---------- Scroll reveal ---------- */
   const reveals = doc.querySelectorAll(".reveal");
+  reveals.forEach((el) => {
+    if (el.classList.contains("reveal--instant")) el.classList.add("in");
+  });
   if ("IntersectionObserver" in window && reveals.length) {
     const io = new IntersectionObserver(
       (entries) => {
@@ -141,18 +217,33 @@
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.35, rootMargin: "0px 0px -5% 0px" }
     );
-    counters.forEach((el) => co.observe(el));
+    counters.forEach((el) => {
+      if (el.hasAttribute("data-count-hero")) {
+        runCount(el);
+        return;
+      }
+      co.observe(el);
+    });
+  } else {
+    counters.forEach(runCount);
   }
 
-  /* ---------- Contact form validation (front-end demo) ---------- */
+  /* ---------- Contact form validation + mailto handoff ---------- */
   const form = doc.querySelector("#contact-form");
   if (form) {
     const success = form.querySelector(".form-success");
+    const submitBtn = form.querySelector("#cf-submit");
     const setError = (input, on) => {
       input.closest(".field").classList.toggle("invalid", on);
       input.setAttribute("aria-invalid", String(on));
+    };
+    const topicLabels = {
+      product: { th: "สอบถามสินค้า", en: "Product enquiry" },
+      partner: { th: "เป็นพันธมิตร / ตัวแทน", en: "Partnership / Reseller" },
+      career: { th: "ร่วมงานกับเรา", en: "Careers" },
+      other: { th: "อื่น ๆ", en: "Other" },
     };
 
     form.addEventListener("submit", (e) => {
@@ -161,6 +252,8 @@
 
       const name = form.querySelector("#cf-name");
       const email = form.querySelector("#cf-email");
+      const phone = form.querySelector("#cf-phone");
+      const topic = form.querySelector("#cf-topic");
       const message = form.querySelector("#cf-message");
 
       const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
@@ -180,6 +273,36 @@
         return;
       }
 
+      const lang = root.getAttribute("lang") === "en" ? "en" : "th";
+      const topicKey = topic ? topic.value : "other";
+      const topicText = topicLabels[topicKey]
+        ? topicLabels[topicKey][lang]
+        : topicKey;
+      const subject =
+        lang === "en"
+          ? `[Crystal Qualet] ${topicText} — ${name.value.trim()}`
+          : `[คริสตัล ควาเลท] ${topicText} — ${name.value.trim()}`;
+      const bodyLines = [
+        lang === "en" ? `Name: ${name.value.trim()}` : `ชื่อ: ${name.value.trim()}`,
+        lang === "en" ? `Email: ${email.value.trim()}` : `อีเมล: ${email.value.trim()}`,
+      ];
+      if (phone && phone.value.trim()) {
+        bodyLines.push(
+          lang === "en"
+            ? `Phone: ${phone.value.trim()}`
+            : `โทร: ${phone.value.trim()}`
+        );
+      }
+      bodyLines.push(
+        lang === "en" ? `Topic: ${topicText}` : `เรื่อง: ${topicText}`,
+        "",
+        message.value.trim()
+      );
+      const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+
+      if (submitBtn) submitBtn.classList.add("is-loading");
+      window.location.href = mailto;
+
       if (success) {
         success.classList.add("show");
         success.setAttribute("tabindex", "-1");
@@ -188,7 +311,8 @@
       form.reset();
       setTimeout(() => {
         if (success) success.classList.remove("show");
-      }, 6000);
+        if (submitBtn) submitBtn.classList.remove("is-loading");
+      }, 8000);
     });
 
     form.querySelectorAll("input, textarea").forEach((f) => {

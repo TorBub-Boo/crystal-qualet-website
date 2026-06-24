@@ -1,37 +1,8 @@
 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crystal Qualet">
-  <defs>
-    <linearGradient id="cq-crown" x1="20" y1="3" x2="20" y2="15" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#cef3e9"/>
-      <stop offset="1" stop-color="#66d2bd"/>
-    </linearGradient>
-    <linearGradient id="cq-tableg" x1="20" y1="4" x2="20" y2="15" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#9fe6d6"/>
-    </linearGradient>
-    <linearGradient id="cq-left" x1="6" y1="15" x2="20" y2="37" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#34b6a1"/>
-      <stop offset="1" stop-color="#0d7d70"/>
-    </linearGradient>
-    <linearGradient id="cq-right" x1="34" y1="15" x2="20" y2="37" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0f635b"/>
-      <stop offset="1" stop-color="#114f49"/>
-    </linearGradient>
-    <linearGradient id="cq-gold" x1="13" y1="6" x2="27" y2="15" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ecd9a6"/>
-      <stop offset="1" stop-color="#c8a14e"/>
-    </linearGradient>
-  </defs>
-  <!-- crown (top) -->
-  <path d="M20 4 8.5 14.5h23L20 4Z" fill="url(#cq-crown)"/>
-  <!-- table facet centered -->
-  <path d="M20 6.6 13.2 14.5h13.6L20 6.6Z" fill="url(#cq-tableg)"/>
-  <!-- gold side facets of crown -->
-  <path d="M20 4 8.5 14.5h4.7L20 6.6V4Z" fill="url(#cq-gold)" opacity="0.85"/>
-  <path d="M20 4l11.5 10.5h-4.7L20 6.6V4Z" fill="url(#cq-gold)" opacity="0.6"/>
-  <!-- pavilion (bottom point), symmetric -->
-  <path d="M8.5 14.5 20 37 20 14.5H8.5Z" fill="url(#cq-left)"/>
-  <path d="M31.5 14.5 20 37V14.5h11.5Z" fill="url(#cq-right)"/>
-  <!-- facet lines -->
-  <path d="M8.5 14.5h23M20 4v33M13.2 14.5 20 37l6.8-22.5M20 6.6 13.2 14.5m6.8-7.9 6.8 7.9"
-        stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.55" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect width="40" height="40" rx="8" fill="#111827"/>
+  <path d="M20 6 10 16h20L20 6Z" fill="#ef4444"/>
+  <path d="M20 8.5 13 16h14L20 8.5Z" fill="#fca5a5"/>
+  <path d="M10 16 20 34 20 16H10Z" fill="#b91c1c"/>
+  <path d="M30 16 20 34V16h10Z" fill="#991b1b"/>
+  <path d="M10 16h20M20 6v28" stroke="#fff" stroke-width="0.7" stroke-opacity="0.35" stroke-linejoin="round"/>
 </svg>

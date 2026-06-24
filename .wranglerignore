@@ -1,0 +1,7 @@
+.git/
+.venv/
+.DS_Store
+*.log
+README.md
+wrangler.toml
+.wranglerignore

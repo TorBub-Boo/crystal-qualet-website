@@ -1,55 +1,20 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crystal Qualet Co., Ltd.">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0d7d70"/>
-      <stop offset="0.55" stop-color="#0f635b"/>
-      <stop offset="1" stop-color="#042622"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(980 90) rotate(125) scale(520)" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#66d2bd" stop-opacity="0.55"/>
-      <stop offset="1" stop-color="#66d2bd" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="gem-a" x1="180" y1="180" x2="300" y2="320" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#9fe6d6"/><stop offset="1" stop-color="#169b88"/>
-    </linearGradient>
-    <linearGradient id="gem-b" x1="420" y1="190" x2="300" y2="330" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ecd9a6"/><stop offset="1" stop-color="#c8a14e"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="300" y1="430" x2="980" y2="430" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#66d2bd"/><stop offset="1" stop-color="#c8a14e"/>
-    </linearGradient>
-  </defs>
+  <rect width="1200" height="630" fill="#111827"/>
+  <rect x="700" y="-80" width="520" height="520" rx="260" fill="#dc2626" fill-opacity="0.12"/>
+  <rect x="-60" y="360" width="360" height="360" rx="180" fill="#dc2626" fill-opacity="0.08"/>
 
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect width="1200" height="630" fill="url(#glow)"/>
-
-  <!-- Crystal gem mark -->
-  <g transform="translate(70 175)">
-    <path d="M70 0h120l40 70-100 170L30 70 70 0Z" fill="#11403d"/>
-    <path d="M70 0 30 70h95L70 0Z" fill="url(#gem-a)"/>
-    <path d="M190 0l40 70H125L190 0Z" fill="url(#gem-b)"/>
-    <path d="M30 70h95l-15 170L30 70Z" fill="#0d7d70"/>
-    <path d="M230 70H125l-15 170 120-170Z" fill="#0a4f48"/>
-    <path d="M125 0v70m0 0L70 0m55 70 65-70M30 70h200M125 70l-15 170m15-170 15 170" stroke="#eafaf5" stroke-width="2" stroke-opacity="0.45" stroke-linejoin="round"/>
+  <g transform="translate(72 145)">
+    <path d="M88 0h144l48 84-120 204L40 84 88 0Z" fill="#450a0a"/>
+    <path d="M88 0 40 84h114L88 0Z" fill="#ef4444"/>
+    <path d="M232 0l48 84H154L232 0Z" fill="#fca5a5"/>
+    <path d="M40 84h114l-18 204L40 84Z" fill="#b91c1c"/>
+    <path d="M280 84H154l-18 204 144-204Z" fill="#991b1b"/>
+    <path d="M154 0v84m0 0L88 0m66 84 78-84M40 84h240M154 84l-18 204m18-204 18 204" stroke="#fff" stroke-width="2" stroke-opacity="0.35" stroke-linejoin="round"/>
   </g>
 
-  <!-- Wordmark -->
-  <text x="340" y="250" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700" fill="#ffffff" letter-spacing="1">Crystal Qualet</text>
-  <text x="342" y="300" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#9fe6d6" letter-spacing="8">SKINCARE &amp; DISTRIBUTION</text>
-
-  <rect x="342" y="340" width="660" height="3" rx="1.5" fill="url(#accent)"/>
-
-  <text x="342" y="404" font-family="'Noto Sans Thai', Arial, sans-serif" font-size="34" font-weight="500" fill="#eafaf5">#4)1 #4*1% '2@% 31</text>
-  <text x="342" y="452" font-family="'Noto Sans Thai', Arial, sans-serif" font-size="25" fill="#bfe7dd">%4 1L9A%4'#5@!5"! " 13+H2"H2A%-#L!--D%L
-1I3</text>
-
-  <!-- Platform chips -->
-  <g font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="600">
-    <rect x="342" y="500" width="150" height="52" rx="26" fill="#ffffff" fill-opacity="0.12"/>
-    <text x="417" y="533" fill="#eafaf5" text-anchor="middle">Shopee</text>
-    <rect x="508" y="500" width="150" height="52" rx="26" fill="#ffffff" fill-opacity="0.12"/>
-    <text x="583" y="533" fill="#eafaf5" text-anchor="middle">Lazada</text>
-    <rect x="674" y="500" width="196" height="52" rx="26" fill="#ffffff" fill-opacity="0.12"/>
-    <text x="772" y="533" fill="#eafaf5" text-anchor="middle">TikTok Shop</text>
-  </g>
+  <text x="390" y="248" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="700" fill="#ffffff" letter-spacing="2">Crystal Qualet</text>
+  <text x="392" y="298" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="600" fill="#fca5a5" letter-spacing="6">SKINCARE &amp; DISTRIBUTION</text>
+  <rect x="392" y="330" width="640" height="3" rx="1.5" fill="#dc2626"/>
+  <text x="392" y="392" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500" fill="#f3f4f6">Premium skincare &amp; online distribution</text>
+  <text x="392" y="438" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#9ca3af">Shopee · Lazada · TikTok Shop</text>
 </svg>

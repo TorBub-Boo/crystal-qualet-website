@@ -1,27 +1,8 @@
-<svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="40" height="40" rx="9" fill="#042622"/>
-  <defs>
-    <linearGradient id="f-crown" x1="20" y1="7" x2="20" y2="17" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#cef3e9"/><stop offset="1" stop-color="#66d2bd"/>
-    </linearGradient>
-    <linearGradient id="f-table" x1="20" y1="8" x2="20" y2="17" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ffffff"/><stop offset="1" stop-color="#9fe6d6"/>
-    </linearGradient>
-    <linearGradient id="f-left" x1="9" y1="17" x2="20" y2="33" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#34b6a1"/><stop offset="1" stop-color="#0d7d70"/>
-    </linearGradient>
-    <linearGradient id="f-right" x1="31" y1="17" x2="20" y2="33" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0f635b"/><stop offset="1" stop-color="#114f49"/>
-    </linearGradient>
-    <linearGradient id="f-gold" x1="13" y1="9" x2="27" y2="17" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ecd9a6"/><stop offset="1" stop-color="#c8a14e"/>
-    </linearGradient>
-  </defs>
-  <path d="M20 8 9.5 17.5h21L20 8Z" fill="url(#f-crown)"/>
-  <path d="M20 10.4 13.6 17.5h12.8L20 10.4Z" fill="url(#f-table)"/>
-  <path d="M20 8 9.5 17.5h4.1L20 10.4V8Z" fill="url(#f-gold)" opacity="0.85"/>
-  <path d="M20 8l10.5 9.5h-4.1L20 10.4V8Z" fill="url(#f-gold)" opacity="0.6"/>
-  <path d="M9.5 17.5 20 32 20 17.5H9.5Z" fill="url(#f-left)"/>
-  <path d="M30.5 17.5 20 32V17.5h10.5Z" fill="url(#f-right)"/>
-  <path d="M9.5 17.5h21M20 8v24" stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.5" stroke-linejoin="round"/>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crystal Qualet">
+  <rect width="32" height="32" rx="7" fill="#111827"/>
+  <path d="M16 5 8 13h16L16 5Z" fill="#ef4444"/>
+  <path d="M16 7.5 10.5 13h11L16 7.5Z" fill="#fca5a5"/>
+  <path d="M8 13 16 27 16 13H8Z" fill="#b91c1c"/>
+  <path d="M24 13 16 27V13h8Z" fill="#991b1b"/>
+  <path d="M8 13h16M16 5v22" stroke="#fff" stroke-width="0.6" stroke-opacity="0.35" stroke-linejoin="round"/>
 </svg>
