@@ -108,8 +108,25 @@ npx wrangler pages deploy . --project-name=crystal-qualet
 
 ### อัปเดตเว็บครั้งถัดไป
 
-- **GitHub:** push ขึ้น repo → Pages deploy ใหม่เอง
-- **Wrangler:** รันคำสั่ง `npx wrangler pages deploy .` อีกครั้ง
+```bash
+./scripts/deploy-pages.sh
+```
+
+สคริpt จะอัปโหลดเฉพาะไฟล์ใน git (ไม่รวม `.venv`) ไปที่ project `crystal-qualet`
+
+#### GitHub Actions (ถ้าอยากให้ push แล้ว deploy อัตโนมัติ)
+
+1. สร้าง API Token ที่ [Cloudflare → My Profile → API Tokens](https://dash.cloudflare.com/profile/api-tokens)  
+   - Template: **Edit Cloudflare Workers** หรือ custom ด้วย permission **Account → Cloudflare Pages → Edit**
+2. ใส่ secret ใน GitHub repo:
+
+```bash
+gh secret set CLOUDFLARE_API_TOKEN --repo TorBub-Boo/crystal-qualet-website
+```
+
+3. จากนั้นค่อยเปิดใช้ workflow ใน `.github/workflows/` (ถ้ามี)
+
+> โปรเจกต `crystal-qualet` สร้างแบบ Direct Upload จึงเชื่อม Git ใน Cloudflare Dashboard โดยตรงไม่ได้ — ใช้ `./scripts/deploy-pages.sh` หรือ GitHub Actions + API token แทน
 
 ---
 
