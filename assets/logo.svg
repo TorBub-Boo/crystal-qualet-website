@@ -1,22 +1,37 @@
 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crystal Qualet">
   <defs>
-    <linearGradient id="cq-facet-a" x1="6" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#9fe6d6"/>
-      <stop offset="1" stop-color="#169b88"/>
+    <linearGradient id="cq-crown" x1="20" y1="3" x2="20" y2="15" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#cef3e9"/>
+      <stop offset="1" stop-color="#66d2bd"/>
     </linearGradient>
-    <linearGradient id="cq-facet-b" x1="34" y1="6" x2="20" y2="22" gradientUnits="userSpaceOnUse">
+    <linearGradient id="cq-tableg" x1="20" y1="4" x2="20" y2="15" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#9fe6d6"/>
+    </linearGradient>
+    <linearGradient id="cq-left" x1="6" y1="15" x2="20" y2="37" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34b6a1"/>
+      <stop offset="1" stop-color="#0d7d70"/>
+    </linearGradient>
+    <linearGradient id="cq-right" x1="34" y1="15" x2="20" y2="37" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f635b"/>
+      <stop offset="1" stop-color="#114f49"/>
+    </linearGradient>
+    <linearGradient id="cq-gold" x1="13" y1="6" x2="27" y2="15" gradientUnits="userSpaceOnUse">
       <stop stop-color="#ecd9a6"/>
       <stop offset="1" stop-color="#c8a14e"/>
     </linearGradient>
-    <linearGradient id="cq-facet-c" x1="20" y1="20" x2="20" y2="38" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#0d7d70"/>
-      <stop offset="1" stop-color="#0f635b"/>
-    </linearGradient>
   </defs>
-  <path d="M11 5h18l5 9-14 22L6 14 11 5Z" fill="#11403d"/>
-  <path d="M11 5 6 14h14L11 5Z" fill="url(#cq-facet-a)"/>
-  <path d="M29 5l5 9H20L29 5Z" fill="url(#cq-facet-b)"/>
-  <path d="M6 14h14l-2 22L6 14Z" fill="url(#cq-facet-c)"/>
-  <path d="M34 14H20l2 22 12-22Z" fill="#0a4f48"/>
-  <path d="M20 5v9m0 0L11 5m9 9 9-9M6 14h28M20 14l-2 22m2-22 2 22" stroke="#eafaf5" stroke-width="0.9" stroke-opacity="0.5" stroke-linejoin="round"/>
+  <!-- crown (top) -->
+  <path d="M20 4 8.5 14.5h23L20 4Z" fill="url(#cq-crown)"/>
+  <!-- table facet centered -->
+  <path d="M20 6.6 13.2 14.5h13.6L20 6.6Z" fill="url(#cq-tableg)"/>
+  <!-- gold side facets of crown -->
+  <path d="M20 4 8.5 14.5h4.7L20 6.6V4Z" fill="url(#cq-gold)" opacity="0.85"/>
+  <path d="M20 4l11.5 10.5h-4.7L20 6.6V4Z" fill="url(#cq-gold)" opacity="0.6"/>
+  <!-- pavilion (bottom point), symmetric -->
+  <path d="M8.5 14.5 20 37 20 14.5H8.5Z" fill="url(#cq-left)"/>
+  <path d="M31.5 14.5 20 37V14.5h11.5Z" fill="url(#cq-right)"/>
+  <!-- facet lines -->
+  <path d="M8.5 14.5h23M20 4v33M13.2 14.5 20 37l6.8-22.5M20 6.6 13.2 14.5m6.8-7.9 6.8 7.9"
+        stroke="#ffffff" stroke-width="0.7" stroke-opacity="0.55" stroke-linejoin="round" stroke-linecap="round"/>
 </svg>
